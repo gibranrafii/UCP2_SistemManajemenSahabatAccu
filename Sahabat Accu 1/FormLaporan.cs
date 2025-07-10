@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -77,8 +78,8 @@ namespace Sahabat_Accu_1
 
             // Set the path to the report (.rdlc file)
             // Change this to the actual path of your RDLC file
-            reportViewer1.LocalReport.ReportPath = @"D:\Kuliah\Semester 4\Pengembangan Aplikasi Basis Data\Sahabat Accu 2 (fix bismillah terakhir)\Sahabat Accu 1\Sahabat Accu 1\Report2.rdlc";
-            // Refresh the ReportViewer to show the updated report
+            string reportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Report2.rdlc");
+            reportViewer1.LocalReport.ReportPath = reportPath;
             reportViewer1.RefreshReport();
         }
 
