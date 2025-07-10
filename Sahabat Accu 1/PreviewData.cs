@@ -13,8 +13,8 @@ namespace Sahabat_Accu_1
 {
     public partial class PreviewData : Form
     {
-        
-        private string connectionString = "Data Source=LAPTOP-QT79LBKA\\GIBRANRAFI;Initial Catalog=SistemManajemenSahabatAccu;Integrated Security=True;Pooling=False";
+        Koneksi kn = new Koneksi();
+
         private Form KaryawanFormInstance;
 
         
@@ -86,7 +86,7 @@ namespace Sahabat_Accu_1
                 DataTable dt = (DataTable)dgvPreview.DataSource;
                 int importedCount = 0;
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(kn.connectionString()))
                 {
                     conn.Open();
                     foreach (DataRow row in dt.Rows)

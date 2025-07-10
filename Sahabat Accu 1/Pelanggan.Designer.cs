@@ -43,6 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.BtnAnalyze = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCari = new System.Windows.Forms.TextBox();
+            this.btnCari = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPelanggan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,7 +184,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.IndianRed;
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBack.Location = new System.Drawing.Point(692, 457);
+            this.btnBack.Location = new System.Drawing.Point(692, 511);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(74, 23);
             this.btnBack.TabIndex = 26;
@@ -201,12 +204,45 @@
             this.BtnAnalyze.UseVisualStyleBackColor = false;
             this.BtnAnalyze.Click += new System.EventHandler(this.BtnAnalyze_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(140, 491);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Cari Data";
+            // 
+            // txtCari
+            // 
+            this.txtCari.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCari.Location = new System.Drawing.Point(309, 488);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(179, 22);
+            this.txtCari.TabIndex = 29;
+            // 
+            // btnCari
+            // 
+            this.btnCari.BackColor = System.Drawing.SystemColors.Info;
+            this.btnCari.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCari.Location = new System.Drawing.Point(572, 491);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(75, 23);
+            this.btnCari.TabIndex = 30;
+            this.btnCari.Text = "Cari";
+            this.btnCari.UseVisualStyleBackColor = false;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            // 
             // Pelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(800, 492);
+            this.ClientSize = new System.Drawing.Size(800, 546);
+            this.Controls.Add(this.btnCari);
+            this.Controls.Add(this.txtCari);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.BtnAnalyze);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRefresh);
@@ -248,5 +284,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button BtnAnalyze;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCari;
+        private System.Windows.Forms.Button btnCari;
     }
 }

@@ -297,8 +297,6 @@ namespace Sahabat_Accu_1 {
             
             private global::System.Data.DataColumn columnnama_karyawan;
             
-            private global::System.Data.DataColumn columntotal_harga_pelayanan;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable1DataTable() {
@@ -406,14 +404,6 @@ namespace Sahabat_Accu_1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn total_harga_pelayananColumn {
-                get {
-                    return this.columntotal_harga_pelayanan;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +439,7 @@ namespace Sahabat_Accu_1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string id_detail, string id_pelayanan, string id_barang, string id_karyawan, int jumlah, decimal subtotal, string nama_pelanggan, string no_hp_pelanggan, string nama_karyawan, decimal total_harga_pelayanan) {
+            public DataTable1Row AddDataTable1Row(string id_detail, string id_pelayanan, string id_barang, string id_karyawan, int jumlah, decimal subtotal, string nama_pelanggan, string no_hp_pelanggan, string nama_karyawan) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_detail,
@@ -460,8 +450,7 @@ namespace Sahabat_Accu_1 {
                         subtotal,
                         nama_pelanggan,
                         no_hp_pelanggan,
-                        nama_karyawan,
-                        total_harga_pelayanan};
+                        nama_karyawan};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -500,7 +489,6 @@ namespace Sahabat_Accu_1 {
                 this.columnnama_pelanggan = base.Columns["nama_pelanggan"];
                 this.columnno_hp_pelanggan = base.Columns["no_hp_pelanggan"];
                 this.columnnama_karyawan = base.Columns["nama_karyawan"];
-                this.columntotal_harga_pelayanan = base.Columns["total_harga_pelayanan"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -524,8 +512,6 @@ namespace Sahabat_Accu_1 {
                 base.Columns.Add(this.columnno_hp_pelanggan);
                 this.columnnama_karyawan = new global::System.Data.DataColumn("nama_karyawan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnama_karyawan);
-                this.columntotal_harga_pelayanan = new global::System.Data.DataColumn("total_harga_pelayanan", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal_harga_pelayanan);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_detail}, true));
                 this.columnid_detail.AllowDBNull = false;
@@ -540,7 +526,6 @@ namespace Sahabat_Accu_1 {
                 this.columnno_hp_pelanggan.MaxLength = 15;
                 this.columnnama_karyawan.AllowDBNull = false;
                 this.columnnama_karyawan.MaxLength = 100;
-                this.columntotal_harga_pelayanan.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -807,22 +792,6 @@ namespace Sahabat_Accu_1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal total_harga_pelayanan {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.total_harga_pelayananColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'total_harga_pelayanan\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.total_harga_pelayananColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isid_pelayananNull() {
                 return this.IsNull(this.tableDataTable1.id_pelayananColumn);
             }
@@ -879,18 +848,6 @@ namespace Sahabat_Accu_1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetsubtotalNull() {
                 this[this.tableDataTable1.subtotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Istotal_harga_pelayananNull() {
-                return this.IsNull(this.tableDataTable1.total_harga_pelayananColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Settotal_harga_pelayananNull() {
-                this[this.tableDataTable1.total_harga_pelayananColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1062,7 +1019,6 @@ namespace Sahabat_Accu_1.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("nama_pelanggan", "nama_pelanggan");
             tableMapping.ColumnMappings.Add("no_hp_pelanggan", "no_hp_pelanggan");
             tableMapping.ColumnMappings.Add("nama_karyawan", "nama_karyawan");
-            tableMapping.ColumnMappings.Add("total_harga_pelayanan", "total_harga_pelayanan");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1079,7 +1035,7 @@ namespace Sahabat_Accu_1.DataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT dl.id_detail, dl.id_pelayanan, dl.id_barang, dl.id_karyawan, dl.jumlah, dl.subtotal, p.nama AS nama_pelanggan, p.no_hp AS no_hp_pelanggan, k.nama AS nama_karyawan, py.harga_akhir AS total_harga_pelayanan
+            this._commandCollection[0].CommandText = @"SELECT dl.id_detail, dl.id_pelayanan, dl.id_barang, dl.id_karyawan, dl.jumlah, dl.subtotal, p.nama AS nama_pelanggan, p.no_hp AS no_hp_pelanggan, k.nama AS nama_karyawan
 FROM     Detail_Layanan AS dl INNER JOIN
                   Pelayanan AS py ON dl.id_pelayanan = py.id_pelayanan INNER JOIN
                   Pelanggan AS p ON py.id_pelanggan = p.id_pelanggan INNER JOIN

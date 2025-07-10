@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,10 @@ namespace Sahabat_Accu_1
 {
     public partial class FormLaporan : Form
     {
+        Koneksi kn = new Koneksi();
+        string connect = "";
+
+
         private Form1 parentForm;
         public FormLaporan(Form1 parentForm)
         {
@@ -30,7 +35,7 @@ namespace Sahabat_Accu_1
         private void SetupReportViewer()
         {
             // Connection string to your database
-            string connectionString = "Data Source=LAPTOP-QT79LBKA\\GIBRANRAFI;Initial Catalog=SistemManajemenSahabatAccu;Integrated Security=True;Pooling=False";
+            connect = kn.connectionString();
 
             // SQL query to retrieve the required data from the database
             string query = @"
@@ -43,8 +48,7 @@ namespace Sahabat_Accu_1
                     dl.subtotal,
                     p.nama AS nama_pelanggan,         -- Nama pelanggan dari tabel Pelanggan
                     p.no_hp AS no_hp_pelanggan,       -- Nomor HP pelanggan dari tabel Pelanggan
-                    k.nama AS nama_karyawan,          -- Nama karyawan dari tabel Karyawan
-                    py.harga_akhir AS total_harga_pelayanan -- Total harga akhir dari tabel Pelayanan
+                    k.nama AS nama_karyawan          -- Nama karyawan dari tabel Karyawan
                 FROM
                     Detail_Layanan dl
                 JOIN
@@ -58,7 +62,7 @@ namespace Sahabat_Accu_1
             DataTable dt = new DataTable();
 
             // Use SqlDataAdapter to fill the DataTable with data from the database
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(kn.connectionString()))
             {
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.Fill(dt);
